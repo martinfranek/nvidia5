@@ -1,0 +1,576 @@
+import { Shop } from './types';
+
+export const shops: Shop[] = [
+  {
+    name: 'Datart',
+    url: 'https://www.datart.cz',
+    availabilityClass: 'product-availability-state',
+    priceClass: '.actual',
+    cards: {
+      '5090': [
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER',
+          url: 'graficka-karta-gigabyte-aorus-geforce-rtx-5090-master-32g-gv-n5090aorus-m-32gd.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'graficka-karta-gigabyte-geforce-rtx-5090-gaming-oc-32g-gv-n5090gaming-oc-32gd.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE WB',
+          url: 'graficka-karta-gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-wb-32g-gv-n5090aorusx-wb-32gd/1.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE',
+          url: 'graficka-karta-gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-32g-gv-n5090aorusx-w-32gd/1.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'WINDFORCE OC',
+          url: 'graficka-karta-gigabyte-geforce-rtx-5090-windforce-oc-32g-gv-n5090wf3oc-32gd.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER ICE',
+          url: 'graficka-karta-gigabyte-aorus-geforce-rtx-5090-master-ice-32g-gv-n5090aorusm-ice-32gd/1.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING',
+          url: 'graficka-karta-asus-tuf-gaming-geforce-rtx-5090-32gb-90yv0ly1-m0na00.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING OC',
+          url: 'graficka-karta-asus-tuf-gaming-geforce-rtx-5090-32gb-oc-90yv0ly0-m0na00.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL',
+          url: 'graficka-karta-asus-rog-astral-geforce-rtx-5090-32gb-90yv0lw1-m0na00.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL OC',
+          url: 'graficka-karta-asus-rog-astral-geforce-rtx-5090-32gb-oc-90yv0lw0-m0na00.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'SUPRIM SOC',
+          url: 'graficka-karta-msi-geforce-rtx-5090-32g-suprim-soc-rtx-5090-32g-suprim-soc.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'GAMING TRIO OC',
+          url: 'graficka-karta-msi-geforce-rtx-5090-32g-gaming-trio-oc-rtx-5090-32g-gaming-trio-oc.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VENTUS 3X OC',
+          url: 'graficka-karta-msi-geforce-rtx-5090-32g-ventus-3x-oc-rtx-5090-32g-ventus-3x-oc.html',
+        },
+      ],
+      '9070XT': [
+        {
+          type: '9070XT',
+          manufacturer: 'ASROCK',
+          family: 'STEEL LEGEND',
+          url: 'graficka-karta-asrock-radeon-rx-9070-xt-steel-legend-16g-rx9070xt-sl-16g.html',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'ASROCK',
+          family: 'TAICHI OC',
+          url: 'graficka-karta-asrock-radeon-rx-9070-xt-taichi-16g-oc-rx9070xt-tc-16go.html',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'ASUS',
+          family: 'PRIME',
+          url: 'graficka-karta-asus-prime-radeon-rx-9070-xt-oc-16g-90yv0l71-m0na00.html',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING',
+          url: 'graficka-karta-asus-tuf-gaming-radeon-rx-9070-xt-oc-16g-90yv0l70-m0na00.html',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'graficka-karta-gigabyte-radeon-rx-9070-xt-gaming-oc-16g-gv-r9070xtgaming-oc-16gd.html',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS ELITE',
+          url: 'graficka-karta-gigabyte-radeon-rx-9070-xt-aorus-elite-16g-gv-r9070xtaorus-e-16gd.html',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'PULSE',
+          url: 'graficka-karta-sapphire-pulse-radeon-rx-9070-xt-16g-11348-03-20g.html',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'PURE',
+          url: 'graficka-karta-sapphire-pure-radeon-rx-9070-xt-16g-11348-02-20g.html',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'NITRO+',
+          url: 'graficka-karta-sapphire-nitro-radeon-rx-9070-xt-16g-oc-11348-01-20g.html',
+        },
+      ],
+    },
+  },
+  {
+    name: 'Smarty',
+    url: 'https://www.smarty.cz',
+    availabilityClass: 'toStoreInfo',
+    priceClass: '.buyBox-price',
+    cards: {
+      '5090': [
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'GIGABYTE-GeForce-RTX-5090-GAMING-OC-32G-4p208658',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'WINDFORCE OC',
+          url: 'GIGABYTE-NVIDIA-GeForce-RTX-5090-WINDFORCE-OC-32G-4p208657',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER',
+          url: 'GIGABYTE-AORUS-NVIDIA-GeForce-RTX-5090-MASTER-32G-4p208678',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER ICE',
+          url: 'GIGABYTE-AORUS-NVIDIA-GeForce-RTX-5090-MASTER-ICE-32G-4p208677',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE',
+          url: 'GIGABYTE-AORUS-NVIDIA-GeForce-RTX-5090-XTREME-WATERFORCE-32G-4p208676',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE WB',
+          url: 'GIGABYTE-AORUS-NVIDIA-GeForce-RTX-5090-XTREME-WATERFORCE-WB-32G-4p208675',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VENTUS 3X OC',
+          url: 'MSI-NVIDIA-GeForce-RTX-5090-32G-VENTUS-3X-OC-4p208620',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'GAMING TRIO OC',
+          url: 'MSI-NVIDIA-GeForce-RTX-5090-32G-GAMING-TRIO-OC-4p208622',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'SUPRIM SOC',
+          url: 'MSI-NVIDIA-GeForce-RTX-5090-32G-SUPRIM-SOC-4p208621',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING',
+          url: 'ASUS-TUF-Gaming-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-4p212409',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL',
+          url: 'ASUS-ROG-Astral-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-4p212495',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL OC',
+          url: 'ASUS-ROG-Astral-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-OC-4p212494',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING OC',
+          url: 'ASUS-TUF-Gaming-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-OC-4p212410',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL LC',
+          url: 'ASUS-ROG-Astral-LC-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-4p212388',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL LC OC',
+          url: 'ASUS-ROG-Astral-LC-NVIDIA-GeForce-RTX-5090-32GB-GDDR7-OC-4p212389',
+        },
+      ],
+      '9070XT': [
+        {
+          type: '9070XT',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING OC',
+          url: 'ASUS-TUF-AMD-Radeon-RX-9070-XT-OC-16GB-4p218987',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'ASUS',
+          family: 'PRIME OC',
+          url: 'ASUS-PRIME-AMD-Radeon-RX-9070-XT-OC-16GB-4p218988',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS ELITE',
+          url: 'GIGABYTE-AORUS-Radeon-RX-9070-XT-ELITE-16G-4p208674',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'GIGABYTE-Radeon-RX-9070-XT-GAMING-OC-16G-4p208655',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'PULSE',
+          url: 'Sapphire-PULSE-AMD-Radeon-RX-9070-XT-GAMING-16GB-4p219014',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'NITRO+',
+          url: 'Sapphire-NITRO-AMD-Radeon-RX-9070-XT-GAMING-OC-16GB-4p219008',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'SAPPHIRE',
+          family: 'PURE',
+          url: 'Sapphire-PURE-AMD-Radeon-RX-9070-XT-GAMING-OC-16GB-white-4p219012',
+        },
+
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'SWIFT WHITE',
+          url: 'XFX-Swift-AMD-Radeon-RX-9070-XT-16GB-GDDR6-triple-fan-white-4p219081',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'SWIFT',
+          url: 'XFX-Swift-AMD-Radeon-RX-9070-XT-16GB-GDDR6-triple-fan-4p219080',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'QUICKSILVER WHITE',
+          url: 'XFX-Quicksilver-AMD-Radeon-RX-9070-XT-16GB-GDDR6-white-4p219079',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'QUICKSILVER MAGNETIC AIR WHITE',
+          url: 'XFX-Quicksilver-AMD-Radeon-RX-9070-XT-16GB-GDDR6-Magnetic-Air-Edition-white-4p219067',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'QUICKSILVER',
+          url: 'XFX-Quicksilver-AMD-Radeon-RX-9070-XT-16GB-GDDR6-4p219078',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'QUICKSILVER MAGNETIC AIR',
+          url: 'XFX-Quicksilver-AMD-Radeon-RX-9070-XT-16GB-GDDR6-Magnetic-Air-Edition-4p219066',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'MERCURY MAGNETIC AIR WHITE',
+          url: 'XFX-Mercury-AMD-Radeon-RX-9070-XT-OC-16GB-GDDR6-Magnetic-Air-Edition-RGB-white-4p219069',
+        },
+        {
+          type: '9070XT',
+          manufacturer: 'XFX',
+          family: 'MERCURY MAGNETIC AIR',
+          url: 'XFX-Mercury-AMD-Radeon-RX-9070-XT-OC-16GB-GDDR6-Magnetic-Air-Edition-RGB-4p219068',
+        },
+      ],
+    },
+  },
+  {
+    name: 'Alza',
+    url: 'https://www.alza.cz',
+    availabilityClass: 'availability-alz-50',
+    priceClass: '.price-box__primary-price__value',
+    cards: {
+      '5090': [
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL',
+          url: 'asus-rog-astral-geforce-rtx-5090-32g-gaming-d12815111.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL LC',
+          url: 'asus-rog-astral-lc-geforce-rtx-5090-32g-gaming-d12815110.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL LC OC',
+          url: 'asus-rog-astral-lc-geforce-rtx-5090-o32g-gaming-d12783435.htm',
+        },
+
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER ICE',
+          url: 'gigabyte-aorus-geforce-rtx-5090-master-ice-32g-d12783431.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE WB',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-wb-32g-d12783430.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-32g-d12783428.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'gigabyte-geforce-rtx-5090-gaming-oc-32g-d12783427.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER',
+          url: 'gigabyte-aorus-geforce-rtx-5090-master-32g-d12783426.htm',
+        },
+
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VANGUARD SOC',
+          url: 'msi-geforce-rtx-5090-32g-vanguard-soc-d12796509.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VENTUS 3X OC',
+          url: 'msi-geforce-rtx-5090-32g-ventus-3x-oc-d12782029.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'SUPRIM SOC',
+          url: 'msi-geforce-rtx-5090-32g-suprim-soc-d12781978.htm',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VANGUARD SOC LAUNCH EDITION',
+          url: 'msi-geforce-rtx-5090-32g-vanguard-soc-launch-edition-d12781977.htm',
+        },
+      ],
+    },
+  },
+  {
+    name: 'TSBohemia',
+    url: 'https://www.tsbohemia.cz',
+    availabilityClass: 'product-tile__availability-value',
+    priceClass: '.product-tile__price-value',
+    cards: {
+      '5090': [
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING OC',
+          url: 'asus-tuf-geforce-rtx-5090-o32g-gaming_d537405',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL OC',
+          url: 'asus-rog-astral-geforce-rtx-5090-o32g-gaming_d537403',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'WINDFORCE OC',
+          url: 'gigabyte-geforce-rtx-5090-windforce-oc-32g_d538287',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'gigabyte-geforce-rtx-5090-gaming-oc-32g_d538286',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER',
+          url: 'gigabyte-aorus-geforce-rtx-5090-master-32g_d538285',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE WB',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-wb-32g_d538283',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-32g_d538282',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'GAMING TRIO OC',
+          url: 'msi-geforce-rtx-5090-32g-gaming-trio-oc_d539842',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'SUPRIM SOC',
+          url: 'msi-geforce-rtx-5090-32g-suprim-soc_d540119',
+        },
+      ],
+    },
+  },
+  {
+    name: 'Suntech',
+    url: 'https://www.suntech.cz',
+    availabilityClass: 'day',
+    priceClass: 'div.wvat > div.price',
+    cards: {
+      '5090': [
+        {
+          type: '5090',
+          manufacturer: 'INNO3D',
+          family: 'X3',
+          url: 'inno3d-geforce-rtx-5090-x3-32gb-gddr7_d694605.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'TUF GAMING OC',
+          url: 'asus-tuf-gaming-geforce-rtx-5090-32-gb-gddr7-oc_d694020.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'ASUS',
+          family: 'ROG ASTRAL OC',
+          url: 'asus-rog-astral-geforce-rtx-5090-32-gb-gddr7-oc_d694019.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'WINDFORCE OC',
+          url: 'gigabyte-geforce-rtx-5090-windforce-oc-32g_d694148.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'GAMING OC',
+          url: 'gigabyte-geforce-rtx-5090-gaming-oc-32g_d694147.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER ICE',
+          url: 'gigabyte-aorus-geforce-rtx-5090-master-ice-32g_d694145.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS MASTER',
+          url: 'gigabyte-aorus-geforce-rtx-5090-master-32g_d694146.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE WB',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-wb-32g_d694144.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'GIGABYTE',
+          family: 'AORUS XTREME WATERFORCE',
+          url: 'gigabyte-aorus-geforce-rtx-5090-xtreme-waterforce-32g_d694143.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'VENTUS 3X OC',
+          url: 'msi-geforce-rtx-5090-32g-ventus-3x-oc_d696522.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'GAMING TRIO OC',
+          url: 'msi-geforce-rtx-5090-32g-gaming-trio-oc_d694021.html',
+        },
+        {
+          type: '5090',
+          manufacturer: 'MSI',
+          family: 'SUPRIM SOC',
+          url: 'msi-geforce-rtx-5090-32g-suprim-soc_d694022.html',
+        },
+      ],
+    },
+  },
+];
