@@ -13,6 +13,4 @@ RUN chown -R app:app .
 
 USER 1002:1002
 
-# RUN mkdir storage && chown -R app:app /storage
-
 CMD ["node", "dist/server.js"]

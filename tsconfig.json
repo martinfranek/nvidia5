@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -9,5 +9,5 @@
     "types": ["./environment.d.ts"],
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "src/server.ts"]
+  "include": ["src/**/*.ts", "src/server.ts", "src/cards/shops.ts"]
 }

@@ -1,4 +1,4 @@
 {
   "availableMemoryRation": 0.8,
-  "logLevel": "WARNING"
+  "logLevel": "ERROR"
 }

@@ -1,18 +1,20 @@
+import { launchOptions } from 'camoufox-js';
 import { PlaywrightCrawler, RequestQueue } from 'crawlee';
 import { CronJob } from 'cron';
+import { firefox } from 'playwright';
 
-import { shops } from './cards/shops';
-import { AVAILABILITY, formatAvailability } from './scrappableStats/availability';
-import { formatPrice } from './scrappableStats/price';
-import {
-  availabilityGauge,
-  METRICS_HOSTNAME,
-  METRICS_PORT,
-  metricsServer,
-  priceGauge,
-  shutdown,
-} from './metrics';
-import { createLogLine, writeToFile } from './logging';
+import { shops } from './cards/shops.js';
+import { AVAILABILITY, formatAvailability } from './scrappableStats/availability.js';
+import { formatPrice } from './scrappableStats/price.js';
+import { availabilityGauge, createMetricsServer, priceGauge, shutdown } from './metrics.js';
+import { createLogLine, formatTimestamp, writeToFile } from './logging.js';
+import { createDebugServer } from './debug.js';
+
+// testing purposes
+// const allShops = [shops.find(shop => shop.name === 'Datart')!];
+
+createMetricsServer();
+createDebugServer();
 
 async function crawlShops() {
   for (const shop of shops) {
@@ -29,37 +31,81 @@ async function crawlShops() {
     let shopResult = '';
 
     const crawler = new PlaywrightCrawler({
+      // options
       requestQueue,
+      navigationTimeoutSecs: 15,
+      maxRequestRetries: 0,
+      maxRequestsPerCrawl: 50,
+      headless: true,
+      persistCookiesPerSession: false,
+      launchContext: {
+        launcher: firefox,
+        launchOptions: await launchOptions({ headless: true }),
+      },
+      // TODO: enable once impit rust binaries are ready for Linux arm64 glibc (https://github.com/apify/impit/tree/master/impit-node)
+      // postNavigationHooks: [
+      //   async ({ handleCloudflareChallenge }) => {
+      //     await handleCloudflareChallenge();
+      //   },
+      // ],
+      // handlers
       async requestHandler({
+        page,
         request: {
           userData: { card },
         },
-        page,
       }) {
-        const availabilitySelector = await page.waitForSelector(`.${shop.availabilityClass}`);
-        const availability = formatAvailability(
-          await availabilitySelector?.evaluate(node => node.textContent),
-        );
-        const priceSelector = await page.waitForSelector(shop.priceClass);
-        const price = formatPrice(await priceSelector?.evaluate(node => node.textContent));
+        try {
+          const [availabilityElement, priceElement] = await Promise.all([
+            page.waitForSelector(`.${shop.availabilityClass}`, {
+              timeout: 5000,
+            }),
+            page.waitForSelector(shop.priceClass, { timeout: 5000 }),
+          ]);
+          const availabilityText = await availabilityElement?.evaluate(node => node.textContent);
+          const priceText = await priceElement?.evaluate(node => node.textContent);
+          const availability = formatAvailability(availabilityText);
+          const price = formatPrice(priceText);
 
-        availabilityGauge
-          .labels(shop.name, card.type, card.manufacturer, card.family)
-          .set(availability === AVAILABILITY.NOT_AVAILABLE ? 0 : 1);
+          availabilityGauge
+            .labels(shop.name, card.type, card.manufacturer, card.family)
+            .set(availability === AVAILABILITY.NOT_AVAILABLE ? 0 : 1);
 
-        priceGauge
-          .labels(shop.name, card.type, card.manufacturer, card.family)
-          .set(typeof price === 'number' ? price : 0);
+          priceGauge
+            .labels(shop.name, card.type, card.manufacturer, card.family)
+            .set(typeof price === 'number' ? price : 0);
 
-        shopResult += createLogLine(
-          shop.name,
-          `${card.type} ${card.manufacturer} ${card.family}`,
-          availability,
-          price,
-        );
+          shopResult += createLogLine(
+            shop.name,
+            `${card.type} ${card.manufacturer} ${card.family}`,
+            availability,
+            price,
+          );
+        } catch (error) {
+          console.error('Error in requestHandler: ', error);
+          await page.screenshot({
+            path: `screenshots/failed to find selectors-${formatTimestamp()}-${shop.name}-${
+              card.type
+            }-${card.manufacturer}-${card.family}.png`,
+          });
+        }
       },
-      maxRequestsPerCrawl: 50,
-      headless: true,
+      async failedRequestHandler(
+        {
+          page,
+          request: {
+            userData: { card },
+          },
+        },
+        error,
+      ) {
+        console.error('Request failed due to: ', error);
+        await page.screenshot({
+          path: `screenshots/${formatTimestamp()}-${shop.name}-${card.type}-${card.manufacturer}-${
+            card.family
+          }.png`,
+        });
+      },
     });
     await crawler.run();
     await writeToFile(shop.name, shopResult);
@@ -67,10 +113,6 @@ async function crawlShops() {
     await requestQueue.drop();
   }
 }
-
-metricsServer.listen(METRICS_PORT, METRICS_HOSTNAME, () => {
-  console.log(`Metrics server is running on ${METRICS_HOSTNAME}:${METRICS_PORT}`);
-});
 
 async function setupCron() {
   try {

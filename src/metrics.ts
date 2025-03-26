@@ -1,8 +1,8 @@
-import { createServer } from 'http';
+import { createServer, Server } from 'http';
 import client from 'prom-client';
 
-export const METRICS_HOSTNAME = 'localhost';
-export const METRICS_PORT = 6155;
+const METRICS_HOSTNAME = '0.0.0.0';
+const METRICS_PORT = 6155;
 
 // setting prometheus metrics
 export const availabilityGauge = new client.Gauge({
@@ -26,34 +26,41 @@ client.collectDefaultMetrics({ register });
 register.registerMetric(availabilityGauge);
 register.registerMetric(priceGauge);
 
-export const metricsServer = createServer(async (req, res) => {
-  switch (req.url) {
-    case '/health':
-      res.statusCode = 200;
-      res.end('OK');
-      return;
-    case '/metrics':
-      try {
+export function createMetricsServer() {
+  const metricsServer = createServer(async (req, res) => {
+    switch (req.url) {
+      case '/health':
         res.statusCode = 200;
-        res.setHeader('content-type', register.contentType);
-        res.end(await register.metrics());
-      } catch (error) {
-        console.log('metrics server error:', error);
-
-        res.statusCode = 500;
-        res.end();
-      } finally {
+        res.end('OK');
         return;
-      }
-    default:
-      break;
-  }
+      case '/metrics':
+        try {
+          res.statusCode = 200;
+          res.setHeader('content-type', register.contentType);
+          res.end(await register.metrics());
+          console.log('successfully called /metrics');
+        } catch (error) {
+          console.log('metrics server error:', error);
 
-  res.statusCode = 400;
-  res.end();
-});
+          res.statusCode = 500;
+          res.end();
+        } finally {
+          return;
+        }
+      default:
+        break;
+    }
 
-export const shutdown = (): void => {
+    res.statusCode = 400;
+    res.end();
+  });
+
+  metricsServer.listen(METRICS_PORT, METRICS_HOSTNAME, () => {
+    console.log(`Metrics server is running on ${METRICS_HOSTNAME}:${METRICS_PORT}`);
+  });
+}
+
+export const shutdown = (server: Server): void => {
   console.log('Shutting down...');
-  metricsServer.close();
+  server.close();
 };

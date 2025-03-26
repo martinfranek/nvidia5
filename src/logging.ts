@@ -7,14 +7,13 @@ export const writeToFile = async (shopName: string, shopResult: string) => {
   await file.close();
 };
 
+export const formatTimestamp = () => format(new Date(), 'dd.MM.yyyy HH:mm:ss');
+
 export const createLogLine = (
   shopName: string,
   cardName: string,
   availability: string,
   price: number | string,
 ) => {
-  return `${format(
-    new Date(),
-    'dd.MM.yyyy HH:mm:ss',
-  )} - ${shopName} - ${cardName} - ${availability} - ${price}\n`;
+  return `${formatTimestamp()} - ${shopName} - ${cardName} - ${availability} - ${price}\n`;
 };

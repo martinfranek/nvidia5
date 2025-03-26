@@ -4,3 +4,6 @@ storage
 data
 .env
 .env*
+k8s/
+logs/
+screenshots/

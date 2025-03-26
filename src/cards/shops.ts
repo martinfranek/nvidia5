@@ -1,11 +1,11 @@
-import { Shop } from './types';
+import { Shop } from './types.js';
 
 export const shops: Shop[] = [
   {
     name: 'Datart',
     url: 'https://www.datart.cz',
     availabilityClass: 'product-availability-state',
-    priceClass: '.actual',
+    priceClass: 'div.price-wrap > div.actual',
     cards: {
       '5090': [
         {
